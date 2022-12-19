@@ -14,7 +14,6 @@ import { DialogRef } from '@angular/cdk/dialog';
   styleUrls: ['./add-student.component.scss'],
 })
 export class AddStudentComponent {
-  profilepicControl = new FormControl('', [Validators.required]);
 
   nameControl = new FormControl('', [
     Validators.required,
@@ -32,8 +31,7 @@ export class AddStudentComponent {
   genderControl = new FormControl('', [Validators.required]);
 
   registerForm = new FormGroup({
-    firstName: this.nameControl,
-    profilepic: this.profilepicControl,
+    name: this.nameControl,
     lastName: this.lastNameControl,
     email: this.emailControl,
     gender: this.genderControl,
