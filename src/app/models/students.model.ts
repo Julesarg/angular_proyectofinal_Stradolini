@@ -1,6 +1,7 @@
 export class Student {
   constructor(
     public id: number,
+    public profilepic: {},
     public name: string,
     public lastName: string,
     public email: string,

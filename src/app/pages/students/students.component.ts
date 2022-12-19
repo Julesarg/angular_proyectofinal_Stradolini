@@ -11,13 +11,13 @@ import { AddStudentComponent } from '../add-student/add-student.component';
 export class StudentsComponent {
 
   students: Student[] = [
-    new Student(1, 'Juan', 'Perez', 'asdsad@hotmail.com', 'M', true, true),
-    new Student(2, 'Analia', 'Rodriguez', 'asdsad@hotmail.com', 'F', true, true),
-    new Student(3, 'Zacarias', 'Fernandez', 'asdsad@hotmail.com', 'M', true, true),
-    new Student(4, 'Graciela', 'Hernandez', 'asdsad@hotmail.com', 'F', true, true)
+    new Student(1, 'picture', 'Juan', 'Perez', 'asdsad@hotmail.com', 'M', true, true),
+    new Student(2, 'picture', 'Analia', 'Rodriguez', 'asdsad@hotmail.com', 'F', true, true),
+    new Student(3, 'picture', 'Zacarias', 'Fernandez', 'asdsad@hotmail.com', 'M', true, true),
+    new Student(4, 'picture', 'Graciela', 'Hernandez', 'asdsad@hotmail.com', 'F', true, true)
   ]
 
-  displayedColumns = ['id', 'name', 'lastName', 'email', 'gender', 'edit', 'deleteOption']
+  displayedColumns = ['id', 'profilepic', 'name', 'lastName', 'email', 'gender', 'edit', 'deleteOption']
 
   constructor(private readonly dialogService: MatDialog) { }
 
