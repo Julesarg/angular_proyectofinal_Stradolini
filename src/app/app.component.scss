@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.main-background {
+  display: flex;
+  background-image: url(../assets/images/background.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 60% auto;
+  background-position: 105% 10%;
+}
+.right-main-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}

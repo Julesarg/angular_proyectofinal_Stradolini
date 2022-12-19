@@ -1,0 +1,27 @@
+<div mat-dialog-title>Adding Student</div>
+
+<form [formGroup]="registerForm" class="container text-center mt-4">
+  <div class="d-flex form-control-added">
+    <div class="col d-flex flex-column justify-content-start align-items-start">
+      <label for="name" class="form-label">Nombre</label>
+      <input [formControl]="nameControl" type="text" class="form-control form-control-1" id="name" />
+      <app-add-student-errors [control]="nameControl"></app-add-student-errors>
+    </div>
+
+    <div class="col d-flex flex-column justify-content-start align-items-start">
+      <label for="lastname" class="form-label">Apellido</label>
+      <input [formControl]="lastNameControl" type="text" class="form-control" id="lastname" />
+      <app-add-student-errors [control]="lastNameControl"></app-add-student-errors>
+    </div>
+  </div>
+
+  <div class="d-flex form-control-added">
+    <div class="col d-flex flex-column justify-content-start align-items-start">
+      <label for="email" class="form-label">Correo Electronico</label>
+      <input [formControl]="emailControl" type="email" class="form-control" id="email" />
+      <app-add-student-errors [control]="emailControl"></app-add-student-errors>
+    </div>
+  </div>
+
+  <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary">Add Student</button>
+</form>
