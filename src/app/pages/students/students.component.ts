@@ -11,6 +11,8 @@ import { ModifyStudentComponent } from '../modify-student/modify-student.compone
 })
 export class StudentsComponent {
 
+  public hover: number
+
   students: Student[] = [
     new Student(1, 'Juan', 'Perez', 'asdsad@hotmail.com', 'M', true, true),
     new Student(2, 'Analia', 'Rodriguez', 'asdsad@hotmail.com', 'F', true, true),
@@ -18,8 +20,7 @@ export class StudentsComponent {
     new Student(4, 'Graciela', 'Hernandez', 'asdsad@hotmail.com', 'F', true, true)
   ]
 
-  displayedColumns = ['id', 'name', 'lastName', 'email', 'gender', 'edit', 'deleteOption']
-
+  displayedColumns = ['id', 'name', 'email', 'gender', 'edit', 'deleteOption']
   constructor(private readonly dialogService: MatDialog) { }
 
   //functions

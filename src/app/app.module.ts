@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AddStudentErrorsComponent } from './shared/errors/add-student-errors/add-student-errors.component';
 import { ModifyStudentComponent } from './pages/modify-student/modify-student.component';
 import { FontsDirective } from './shared/directives/fonts.directive';
+import { FullnamePipe } from './shared/pipes/fullname.pipe';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FontsDirective } from './shared/directives/fonts.directive';
     AddStudentErrorsComponent,
     ModifyStudentComponent,
     FontsDirective,
+    FullnamePipe,
   ],
   imports: [
     BrowserModule,
