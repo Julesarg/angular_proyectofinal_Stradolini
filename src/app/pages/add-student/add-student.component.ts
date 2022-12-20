@@ -7,7 +7,7 @@ import {
   AbstractControl,
 } from '@angular/forms';
 import { DialogRef } from '@angular/cdk/dialog';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Student } from 'src/app/models/students.model';
 
 @Component({
@@ -39,11 +39,14 @@ export class AddStudentComponent {
     gender: this.genderControl,
   });
 
-  constructor(private readonly dialogRef: DialogRef) { }
 
+  //prevenir close
+  constructor(private readonly dialogRef: DialogRef, private dialog: MatDialogRef<AddStudentComponent>) {
+    dialog.disableClose = true;
+  }
+
+  //close
   closeWindow() {
     this.dialogRef.close()
   }
-
 }
-
