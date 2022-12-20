@@ -13,6 +13,8 @@ import { MaterialModuleModule } from './shared/modules/material-module.module';
 import { AddStudentComponent } from './pages/add-student/add-student.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddStudentErrorsComponent } from './shared/errors/add-student-errors/add-student-errors.component';
+import { ModifyStudentComponent } from './pages/modify-student/modify-student.component';
+import { FontsDirective } from './shared/directives/fonts.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { AddStudentErrorsComponent } from './shared/errors/add-student-errors/ad
     SidebarComponent,
     AddStudentComponent,
     AddStudentErrorsComponent,
+    ModifyStudentComponent,
+    FontsDirective,
   ],
   imports: [
     BrowserModule,

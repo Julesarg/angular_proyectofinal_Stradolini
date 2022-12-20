@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Student } from 'src/app/models/students.model';
 import { AddStudentComponent } from '../add-student/add-student.component';
+import { ModifyStudentComponent } from '../modify-student/modify-student.component';
 
 @Component({
   selector: 'app-students',
@@ -21,6 +22,9 @@ export class StudentsComponent {
 
   constructor(private readonly dialogService: MatDialog) { }
 
+  //functions
+
+  //agregar estudiante
   addStudent() {
     let dialog = this.dialogService.open(AddStudentComponent)
 
@@ -28,6 +32,25 @@ export class StudentsComponent {
       if (value) {
         let lastId = this.students[this.students.length - 1]?.id;
         this.students = [...this.students, new Student(lastId + 1, value.name, value.lastName, value.email, value.gender, true, true)]
+      }
+      else {
+        this.students = [new Student(1, value.name, value.lastName, value.email, value.gender, true, true)]
+      }
+    })
+  }
+
+  //borrar estudiante
+  deleteStudent(student: Student) {
+    this.students = this.students.filter((element) => element.id != student.id)
+  }
+
+  //editar estudiante
+  editStudent(student: Student) {
+    let dialog = this.dialogService.open(ModifyStudentComponent, { data: student })
+
+    dialog.afterClosed().subscribe((data) => {
+      if (data) {
+        this.students = this.students.map((element) => element.id === student.id ? { ...element, ...data } : element)
       }
     })
   }

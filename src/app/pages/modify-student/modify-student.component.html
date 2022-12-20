@@ -1,0 +1,52 @@
+<div mat-dialog-title>Modify Student</div>
+
+<form [formGroup]="registerForm" class="container text-center mt-4">
+
+  <div class="d-flex form-control-added">
+    <div class="col d-flex flex-column justify-content-start align-items-start">
+      <label for="name" class="form-label">Nombre</label>
+      <input [formControl]="nameControl" type="text" class="form-control form-control-1" id="name" />
+      <app-add-student-errors [control]="nameControl"></app-add-student-errors>
+    </div>
+
+    <div class="col d-flex flex-column justify-content-start align-items-start">
+      <label for="lastname" class="form-label">Apellido</label>
+      <input [formControl]="lastNameControl" type="text" class="form-control" id="lastname" />
+      <app-add-student-errors [control]="lastNameControl"></app-add-student-errors>
+    </div>
+  </div>
+
+  <div class="d-flex form-control-added">
+    <div class="col d-flex flex-column justify-content-start align-items-start">
+      <label for="email" class="form-label">Correo Electronico</label>
+      <input [formControl]="emailControl" type="email" class="form-control" id="email" />
+      <app-add-student-errors [control]="emailControl"></app-add-student-errors>
+    </div>
+  </div>
+
+  <div class="d-flex form-control-added">
+    <label for="gender" class="form-label">Gender</label>
+    <mat-form-field appearance="fill">
+      <mat-label>Select an option</mat-label>
+      <mat-select [formControl]="genderControl">
+        <mat-option>None</mat-option>
+        <mat-option value="M">Male</mat-option>
+        <mat-option value="F">Female</mat-option>
+        <mat-option value="Other">Other</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <app-add-student-errors [control]="genderControl"></app-add-student-errors>
+  </div>
+
+  <!-- <div class="d-flex form-control-added">
+    <div class="col d-flex flex-column justify-content-start align-items-start">
+      <label for="profilepic" class="form-label">Add Image</label>
+      <input [formControl]="profilepicControl" type="file" class="form-control-file" id="profilepic">
+      <app-add-student-errors [control]="profilepicControl"></app-add-student-errors>
+    </div>
+  </div> -->
+
+  <button [mat-dialog-close]="registerForm.value" [disabled]="registerForm.invalid" type="submit"
+    class="btn btn-primary">Confirm</button>
+  <button (click)="closeWindow()" type="submit" class="btn btn-primary">Cancel</button>
+</form>

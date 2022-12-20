@@ -11,11 +11,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Student } from 'src/app/models/students.model';
 
 @Component({
-  selector: 'app-add-student',
-  templateUrl: './add-student.component.html',
-  styleUrls: ['./add-student.component.scss'],
+  selector: 'app-modify-student',
+  templateUrl: './modify-student.component.html',
+  styleUrls: ['./modify-student.component.scss'],
 })
-export class AddStudentComponent {
+export class ModifyStudentComponent {
 
   nameControl = new FormControl('', [
     Validators.required,
@@ -39,7 +39,11 @@ export class AddStudentComponent {
     gender: this.genderControl,
   });
 
-  constructor(private readonly dialogRef: DialogRef) { }
+  constructor(private readonly dialogRef: DialogRef, @Inject(MAT_DIALOG_DATA) public data: Student | null) {
+    if (data) {
+      this.registerForm.patchValue(data)
+    }
+  }
 
   closeWindow() {
     this.dialogRef.close()
